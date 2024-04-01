@@ -45,7 +45,6 @@ const Validation = {
         : { valid: true },
   },
   isValid: (control) => {
-    return true;
     let validateControls = {};
     control
       .getAttribute("data-validate")
