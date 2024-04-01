@@ -1,0 +1,6 @@
+PORT=xxxx
+HOST=xxxxxx
+SQL_USER=xxxx
+PASSWORD=xxxx
+DATABASE=xxxxxxxx
+PAGE_LIMIT=10
