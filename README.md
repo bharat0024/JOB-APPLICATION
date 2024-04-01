@@ -14,6 +14,7 @@
 - mysql: "^2.18.1",
 - nodemon: "^3.1.0"
 ```
+
 ## Use
 
 - to handle user job application
@@ -67,23 +68,23 @@
 
 ## App Preview
 
-![Basic Information](<Screenshot from 2024-04-01 10-40-34.png>)
-![Education Information](<Screenshot from 2024-04-01 11-22-26.png>)
-![Education Form](<Screenshot from 2024-04-01 11-25-49.png>)
-![Education Detail Card](<Screenshot from 2024-04-01 11-27-19.png>)
-![Work Experience](<Screenshot from 2024-04-01 11-28-34.png>)
-![Experience Form](<Screenshot from 2024-04-01 11-28-13.png>)
-![Experience Card](<Screenshot from 2024-04-01 11-29-39.png>)
-![Language Known](<Screenshot from 2024-04-01 11-30-13.png>)
-![Skill information](<Screenshot from 2024-04-01 11-31-01.png>)
-![Reference information](<Screenshot from 2024-04-01 11-31-49.png>)
-![Reference Card](<Screenshot from 2024-04-01 11-32-03.png>)
-![Preference](<Screenshot from 2024-04-01 11-32-11.png>)
+![Basic Information](<preview/Screenshot from 2024-04-01 10-40-34.png>)
+![Education Information](<preview/Screenshot from 2024-04-01 11-22-26.png>)
+![Education Form](<preview/Screenshot from 2024-04-01 11-25-49.png>)
+![Education Detail Card](<preview/Screenshot from 2024-04-01 11-27-19.png>)
+![Work Experience](<preview/Screenshot from 2024-04-01 11-28-34.png>)
+![Experience Form](<preview/Screenshot from 2024-04-01 11-28-13.png>)
+![Experience Card](<preview/Screenshot from 2024-04-01 11-29-39.png>)
+![Language Known](<preview/Screenshot from 2024-04-01 11-30-13.png>)
+![Skill information](<preview/Screenshot from 2024-04-01 11-31-01.png>)
+![Reference information](<preview/Screenshot from 2024-04-01 11-31-49.png>)
+![Reference Card](<preview/Screenshot from 2024-04-01 11-32-03.png>)
+![Preference](<preview/Screenshot from 2024-04-01 11-32-11.png>)
 
 ## Error Handling
 
-![field require](<Screenshot from 2024-04-01 11-33-31.png>)
-![Only alphabet allowed..](<Screenshot from 2024-04-01 11-34-14.png>)
-![invalid email](<Screenshot from 2024-04-01 11-34-46.png>)
-![invalid mobile number starting](<Screenshot from 2024-04-01 11-35-56.png>)
-![Server Down](<Screenshot from 2024-04-01 11-21-45.png>)
+![field require](<preview/Screenshot from 2024-04-01 11-33-31.png>)
+![Only alphabet allowed..](<preview/Screenshot from 2024-04-01 11-34-14.png>)
+![invalid email](<preview/Screenshot from 2024-04-01 11-34-46.png>)
+![invalid mobile number starting](<preview/Screenshot from 2024-04-01 11-35-56.png>)
+![Server Down](<preview/Screenshot from 2024-04-01 11-21-45.png>)
