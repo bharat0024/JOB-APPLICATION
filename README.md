@@ -1,6 +1,4 @@
-# Title
-
-Abstract:JOB APPLICATION
+# JOB APPLICATION
 
 ## Application Information
 
