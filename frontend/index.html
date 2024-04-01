@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application - Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheet/style.css">
+</head>
+
+<body class="center" style="flex-direction: column;">
+    <toast></toast>
+    <div class="card">
+        <div class="step-container">
+            <span>Job Application</span>
+            <div
+                style="height: 80%;padding-top:50px;display: flex;flex-direction: column;align-items: flex-start;margin-left: 10px;padding-top: 50px;z-index: 1;">
+                <div class="nav-option-container">
+                    <div class="active" id="step-1-nav"></div>
+                    <p class="nav-title">Basic Information</p>
+                </div>
+                <div class="nav-option-container">
+                    <div class="inactive" id="step-2-nav"></div>
+                    <p class="nav-title">Education</p>
+                </div>
+                <div class="nav-option-container">
+                    <div class="inactive" id="step-3-nav"></div>
+                    <p class="nav-title">Work Experience</p>
+                </div>
+                <div class="nav-option-container">
+                    <div class="inactive" id="step-4-nav"></div>
+                    <p class="nav-title">Language Known</p>
+                </div>
+                <div class="nav-option-container">
+                    <div class="inactive" id="step-5-nav"></div>
+                    <p class="nav-title">Technology & skill</p>
+                </div>
+                <div class="nav-option-container">
+                    <div class="inactive" id="step-6-nav"></div>
+                    <p class="nav-title">Reference Contact</p>
+                </div>
+                <div class="nav-option-container">
+                    <div class="inactive" id="step-7-nav"></div>
+                    <p class="nav-title">Preference</p>
+                </div>
+            </div>
+        </div>
+        <form action="#" method="post" onsubmit="handleSubmitData(event)">
+            <div id="step-1" style="display: none;">
+                <h3 class="center">Basic Information</h3>
+                <div style="width: 100%;display: flex;justify-content: space-around;">
+                    <div style="width: 40%;">
+                        <div class="input-group">
+                            <label for="firstname">First name</label>
+                            <input type="text" data-validate="require alpha" name="firstname" id="firstname"
+                                placeholder="first name" autofocus tabindex="1" oninput="Validation.isValid(this)"
+                                onblur="Validation.isValid(this)" />
+                        </div>
+                        <div class="input-group">
+                            <label for="designation">Designation</label>
+                            <input type="text" name="designation" id="designation" data-validate="require alpha"
+                                placeholder="designation" tabindex="3" oninput="Validation.isValid(this)"
+                                onblur="Validation.isValid(this)" />
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" data-validate="require email"
+                                placeholder="abc@123.com" tabindex="5" oninput="Validation.isValid(this)"
+                                onblur="Validation.isValid(this)" />
+                        </div>
+                        <div class="input-group">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" name="mobile" id="mobile" data-validate="require digit10 mobile"
+                                placeholder="1234567890" tabindex="7" oninput="Validation.isValid(this)"
+                                onblur="Validation.isValid(this)" />
+                        </div>
+                        <div class="input-group">
+                            <label for="gender">Gender</label>
+                            <div>
+                                <input type="radio" name="gender" id="male" tabindex="9" value="male"
+                                    checked /><span>Male</span>
+                                <input type="radio" name="gender" id="female" tabindex="10"
+                                    value="female" /><span>Female</span>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="zip">ZIP</label>
+                            <input type="text" name="zip" id="zip" data-validate="require digit6" placeholder="123456"
+                                tabindex="12" oninput="Validation.isValid(this)" onblur="Validation.isValid(this)" />
+                        </div>
+                        <div class="input-group">
+                            <label for="dateofbirth">Date Of Birth</label>
+                            <input type="date" name="dateofbirth" id="dateofbirth" placeholder="yyyy/mm/dd"
+                                data-validate="require" max="" onfocus="this.max=new Date().toISOString().split('T')[0]"
+                                onchange="Validation.isValid(this)" onblur="Validation.isValid(this)" />
+                        </div>
+                    </div>
+                    <div style="width: 40%;">
+                        <div class="input-group">
+                            <label for="lastname">Last name</label>
+                            <input type="text" name="lastname" id="lastname" placeholder="last name"
+                                data-validate="require alpha" tabindex="2" oninput="Validation.isValid(this)"
+                                onblur="Validation.isValid(this)" />
+                        </div>
+                        <div class="input-group">
+                            <label for="address1">Address1</label>
+                            <textarea name="address1" id="address1" placeholder="00,abc,pqr-1234"
+                                data-validate="require" tabindex="4" oninput="Validation.isValid(this)"
+                                onblur="Validation.isValid(this)"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="address2">Address2</label>
+                            <textarea name="address2" id="address2" data-validate="require"
+                                placeholder="00,abc,pqr-1234" tabindex="6" oninput="Validation.isValid(this)"
+                                onblur="Validation.isValid(this)"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city" data-validate="require alpha"
+                                placeholder="ahemdabad" tabindex="8" oninput="Validation.isValid(this)"
+                                onblur="Validation.isValid(this)" />
+                        </div>
+                        <div class="input-group">
+                            <label for="state">State</label>
+                            <select name="state" id="state" data-validate="require" onchange="Validation.isValid(this)"
+                                onblur="Validation.isValid(this)">
+                                <option value="">--select state--</option>
+                                <option value="gujarat">Gujarat</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="relation">Relation State</label>
+                            <select name="relation" id="relation" data-validate="require"
+                                onchange="Validation.isValid(this)" onblur="Validation.isValid(this)">
+                                <option value="">--relation state--</option>
+                                <option value="married">married</option>
+                                <option value="unmarried">unmarried</option>
+                            </select>
+                        </div>
+                        <div class="input-group"
+                            style="display: flex;justify-content: flex-end;align-items: flex-end;margin-top: 20px;">
+                            <button type="button"
+                                style="width: 120px;padding: 10px;background-color: var(--text1);color: var(--sky-bg);border: none;border-radius: 5px;cursor: pointer;"
+                                onclick="nextStep(2)"> Next </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step-2 -->
+            <div id="step-2" style="height: 100%;position: relative;display: none;">
+                <h3 class="center">Education</h3>
+                <div style="width: 100%;height: 100%;padding: 10px;">
+                    <div style="height: 75%;width: 100%;display: flex;">
+                        <p style="color: var(--text1);opacity: .8;text-align: center;width: 100%;">please add education
+                            details..</p>
+                        <div id="btnAddeducationInfo"
+                            style="height: 30px;width: 30px;background: var(--text1);color: var(--sky-bg);border-radius: 50%;display: flex;justify-content: center;align-items: center;position: absolute;top: -8%;right: -2.5%;"
+                            onclick="addEducation()">
+                            +
+                        </div>
+                    </div>
+                    <div style="float: right;">
+                        <button type="button"
+                            style="width: 120px;height: max-content;padding: 10px;background-color: var(--text1);color: var(--sky-bg);border: none;border-radius: 5px;cursor: pointer;"
+                            onclick="nextStep(3)"> Next </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Step-3 -->
+            <div id="step-3" style="height: 100%;position: relative;display: none;">
+                <h3 class="center">Work Experience</h3>
+                <div style="width: 100%;height: 100%;padding: 10px;">
+                    <div style="height: 75%;width: 100%;display: flex;">
+                        <p style="color: var(--text1);opacity: .8;text-align: center;width: 100%;">No experience</p>
+                        <div id="btnAddexperienceInfo"
+                            style="height: 30px;width: 30px;background: var(--text1);color: var(--sky-bg);border-radius: 50%;display: flex;justify-content: center;align-items: center;position: absolute;top: -8%;right: -2.5%;"
+                            onclick="addExperience()">
+                            +
+                        </div>
+                    </div>
+                    <div style="float: right;">
+                        <button type="button"
+                            style="width: 120px;height: max-content;padding: 10px;background-color: var(--text1);color: var(--sky-bg);border: none;border-radius: 5px;cursor: pointer;"
+                            onclick="nextStep(4)"> Next </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step-4 -->
+            <div id="step-4" style="height: 60%;display: none;">
+                <h3 class="center">Language Known</h3>
+                <div
+                    style="width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;position: relative;">
+                    <div class="input-group"
+                        style="display: flex;justify-content: flex-end;align-items: flex-end;margin-top: 20px;position: absolute;top: 110%;right: 5%;">
+                        <button type="button"
+                            style="width: 120px;padding: 10px;background-color: var(--text1);color: var(--sky-bg);border: none;border-radius: 5px;cursor: pointer;"
+                            onclick="nextStep(5)"> Next </button>
+                    </div>
+                    <div style="width: 100%;display: flex;">
+                        <div
+                            style="display: flex;width: 90%;justify-content: space-around;flex-direction: column;padding: 10px;">
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="english" id="english" data-language="english" value="1"
+                                    hidden disabled />
+                                <label for="english" style="width: 60px;">English</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="hindi" id="hindi" data-language="hindi" value="2" hidden
+                                    disabled />
+                                <label for="hindi" style="width: 60px;">Hindi</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="gujarati" id="gujarati" data-language="gujarati" value="3"
+                                    hidden disabled />
+                                <label for="gujarati" style="width: 60px;">Gujarati</label>
+                            </div>
+                        </div>
+                        <div
+                            style="height: 100%;width: 5px;background:linear-gradient(transparent,#002f4b5e,transparent);margin: 3px 5px 3px 5px;">
+                        </div>
+                        <div style="display: flex;width: 90%;justify-content: space-around;flex-direction: column;">
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="lread" id="begenglish" data-parent="english"
+                                    onchange="chkHndl(this)" />
+                                <label for="begenglish" style="width: 80px;">Read</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="lread" id="beghindi" data-parent="hindi"
+                                    onchange="chkHndl(this)" />
+                                <label for="beghindi" style="width: 80px;">Read</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="lread" id="beggujarati" data-parent="gujarati"
+                                    onchange="chkHndl(this)" />
+                                <label for="beggujarati" style="width: 80px;">Read</label>
+                            </div>
+                        </div>
+                        <div style="display: flex;width: 90%;justify-content: space-around;flex-direction: column;">
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="lwrite" id="intenglish" data-parent="english"
+                                    onchange="chkHndl(this)" />
+                                <label for="intenglish" style="width: 80px;">Write</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="lwrite" id="inthindi" data-parent="hindi"
+                                    onchange="chkHndl(this)" />
+                                <label for="inthindi" style="width: 80px;">Write</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="lwrite" id="intgujarati" data-parent="gujarati"
+                                    onchange="chkHndl(this)" />
+                                <label for="intgujarati" style="width: 80px;">Write</label>
+                            </div>
+                        </div>
+                        <div style="display: flex;width: 90%;justify-content: space-around;flex-direction: column;">
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="lspeak" id="expenglish" data-parent="english"
+                                    onchange="chkHndl(this)" />
+                                <label for="expenglish" style="width: 80px;">Speak</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="lspeak" id="exphindi" data-parent="hindi"
+                                    onchange="chkHndl(this)" />
+                                <label for="exphindi" style="width: 80px;">Speak</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="lspeak" id="expgujarati" data-parent="gujarati"
+                                    onchange="chkHndl(this)" />
+                                <label for="expgujarati" style="width: 80px;">Speak</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step-5 -->
+            <div id="step-5" style="height: 60%;display: none;">
+                <h3 class="center">Technology & Skill</h3>
+                <div
+                    style="width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;position: relative;">
+                    <div class="input-group"
+                        style="display: flex;justify-content: flex-end;align-items: flex-end;margin-top: 20px;position: absolute;top: 110%;right: 5%;">
+                        <button type="button"
+                            style="width: 120px;padding: 10px;background-color: var(--text1);color: var(--sky-bg);border: none;border-radius: 5px;cursor: pointer;"
+                            onclick="nextStep(6)"> Next </button>
+                    </div>
+                    <div style="width: 100%;display: flex;">
+                        <div
+                            style="display: flex;width: 90%;justify-content: space-around;flex-direction: column;padding: 10px;">
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="php" id="php" value="1" data-skill="php"
+                                    onchange="hdlrSkill(this)" hidden />
+                                <label for="php" style="width: 60px;">PHP</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="hindi" value="2" id="laravel" data-skill="laravel"
+                                    onchange="hdlrSkill(this)" hidden />
+                                <label for="laravel" style="width: 60px;">Laravel</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="mysql" value="3" id="mysql" data-skill="mysql"
+                                    onchange="hdlrSkill(this)" hidden />
+                                <label for="mysql" style="width: 60px;">Mysql</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="checkbox" name="oracle" value="4" id="oracle" data-skill="oracle"
+                                    onchange="hdlrSkill(this)" hidden />
+                                <label for="oracle" style="width: 60px;">Oracle</label>
+                            </div>
+                        </div>
+                        <div
+                            style="height: 100%;width: 5px;background:linear-gradient(transparent,#002f4b5e,transparent);margin: 3px 5px 3px 5px;">
+                        </div>
+                        <div style="display: flex;width: 90%;justify-content: space-around;flex-direction: column;">
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="php" id="begphp" value="1" data-parent="php"
+                                    onchange="chkHndl(this)" />
+                                <label for="begphp" style="width: 80px;">Beginer</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="laravel" id="beglaravel" value="1" data-parent="laravel"
+                                    onchange="chkHndl(this)" />
+                                <label for="beglaravel" style="width: 80px;">Beginer</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="mysql" id="begmysql" value="1" data-parent="mysql"
+                                    onchange="chkHndl(this)" />
+                                <label for="begmysql" style="width: 80px;">Beginer</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="oracle" id="begoracle" value="1" data-parent="oracle"
+                                    onchange="chkHndl(this)" />
+                                <label for="begoracle" style="width: 80px;">Beginer</label>
+                            </div>
+                        </div>
+                        <div style="display: flex;width: 90%;justify-content: space-around;flex-direction: column;">
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="php" id="intphp" data-parent="php" value="2"
+                                    onchange="chkHndl(this)" />
+                                <label for="intphp" style="width: 80px;">Mideator</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="laravel" id="intlaravel" value="2" data-parent="laravel"
+                                    onchange="chkHndl(this)" />
+                                <label for="intlaravel" style="width: 80px;">Mideator</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="mysql" id="intmysql" value="2" data-parent="mysql"
+                                    onchange="chkHndl(this)" />
+                                <label for="intmysql" style="width: 80px;">Mideator</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="oracle" id="intoracle" value="2" data-parent="oracle"
+                                    onchange="chkHndl(this)" />
+                                <label for="intoracle" style="width: 80px;">Mideator</label>
+                            </div>
+                        </div>
+                        <div style="display: flex;width: 90%;justify-content: space-around;flex-direction: column;">
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="php" id="expphp" data-parent="php" value="3"
+                                    onchange="chkHndl(this)" />
+                                <label for="expphp" style="width: 80px;">Expert</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="laravel" id="explaravel" value="3" data-parent="laravel"
+                                    onchange="chkHndl(this)" />
+                                <label for="explaravel" style="width: 80px;">Expert</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="mysql" id="expmysql" value="3" data-parent="mysql"
+                                    onchange="chkHndl(this)" />
+                                <label for="expmysql" style="width: 80px;">Expert</label>
+                            </div>
+                            <div class="input-group"
+                                style="margin-top: 5px;flex-direction: row;justify-content: center;align-items: center;">
+                                <input type="radio" name="oracle" id="exporacle" value="3" data-parent="oracle"
+                                    onchange="chkHndl(this)" />
+                                <label for=" exporacle" style="width: 80px;">Expert</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step-6 -->
+            <div id="step-6" style="height: 100%;position: relative;display: none;">
+                <h3 class="center">Reference Contact</h3>
+                <div style="width: 100%;height: 100%;padding: 10px;">
+                    <div style="height: 75%;width: 100%;display: flex;">
+                        <p style="color: var(--text1);opacity: .8;text-align: center;width: 100%;">No Referece</p>
+                        <div id="btnAddrefernceInfo"
+                            style="height: 30px;width: 30px;background: var(--text1);color: var(--sky-bg);border-radius: 50%;display: flex;justify-content: center;align-items: center;position: absolute;top: -8%;right: -2.5%;"
+                            onclick="addContact()">
+                            +
+                        </div>
+                    </div>
+                    <div style="float: right;">
+                        <button type="button"
+                            style="width: 120px;height: max-content;padding: 10px;background-color: var(--text1);color: var(--sky-bg);border: none;border-radius: 5px;cursor: pointer;"
+                            onclick="nextStep(7)"> Next </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step-7 -->
+            <div id="step-7" style="height: 100%;display: none;">
+                <h3 class="center">Preference</h3>
+                <div
+                    style="width: 100%;display: flex;padding: 10px;justify-content: space-around;position: relative;height: 68%;">
+                    <div style="display: flex;width: 48%;justify-content: space-around;flex-direction: column;">
+                        <div class="input-group" style="margin-top: 5px;">
+                            <label for="noticeperiod">Notice Period</label>
+                            <input type="number" name="noticeperiod" id="noticeperiod" placeholder="in month"
+                                data-validate="require digit" oninput="Validation.isValid(this)"
+                                onfocus="Validation.isValid(this)" onblur="Validation.isValid(this)" max="12" min="0" />
+                        </div>
+                        <div class="input-group" style="margin-top: 5px;">
+                            <label for="currentctc">Current CTC</label>
+                            <input type="number" name="currentctc" id="currentctc" placeholder="0000000"
+                                data-validate="require digit" oninput="Validation.isValid(this)"
+                                onfocus="Validation.isValid(this)" onblur="Validation.isValid(this)" max="99999999" />
+                        </div>
+                        <div class="input-group" style="margin-top: 5px;">
+                            <label for="expectctc">Expected CTC</label>
+                            <input type="number" name="expectctc" id="expectctc" placeholder="0000000"
+                                data-validate="require digit" oninput="Validation.isValid(this)"
+                                onfocus="Validation.isValid(this)" onblur="Validation.isValid(this)" max="99999999" />
+                        </div>
+                    </div>
+                    <div style="width: 48%;">
+                        <div class="input-group" style="margin-top: 5px;width: 90%;">
+                            <label for="location">Prefered Location</label>
+                            <select multiple size="3" style="width: 100%;height: 100px !important;"
+                                data-validate="require" name="location" id="location">
+                                <option value="AHEMDABAD">ahemdabad</option>
+                                <option value="RAJKOT">rajkot</option>
+                                <option value="UK">UK</option>
+                            </select>
+                        </div>
+                        <div class="input-group" style="width: 90%;">
+                            <label for="deptid">Prefered Role</label>
+                            <select name="deptid" id="deptid" data-validate="require">
+                                <option value="" disabled>--roles--</option>
+                                <option value="298"> Business Development </option>
+                                <option value="231"> Engineering </option>
+                                <option value="819"> Human Resources </option>
+                                <option value="983"> Legal </option>
+                                <option value="767"> Marketing </option>
+                                <option value="664"> Product Management </option>
+                                <option value="428"> Research and Development </option>
+                                <option value="638"> Sales </option>
+                                <option value="569"> Services </option>
+                                <option value="49">Support </option>
+                                <option value="814"> Training </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group"
+                    style="display: flex;justify-content: flex-end;align-items: flex-end;margin-top: 20px;padding-right: 10px;">
+                    <button type="button" onclick="nextStep(8)"
+                        style="width: 120px;padding: 10px;background-color: var(--text1);color: var(--sky-bg);border: none;border-radius: 5px;cursor: pointer;">
+                        Submit </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./javascript/helper/apiHandler.js"></script>
+    <script src="./javascript/modal/hendler/cardGenerator.js"></script>
+    <script src="./javascript/helper/datafiller.js"></script>
+    <script src="./javascript/toast/toast.js"></script>
+    <script src="./javascript/helper/insert.js"></script>
+    <script src="./javascript/helper/update.js"></script>
+    <script src="./javascript/helper/operation.js"></script>
+    <script src="./javascript/helper/bodyPrepare.js"></script>
+    <script src="./javascript/stepHandler.js"></script>
+    <script src="./javascript/modal/forms/contact.js"></script>
+    <script src="./javascript/modal/forms/education.js"></script>
+    <script src="./javascript/modal/forms/experience.js"></script>
+    <script src="./javascript/modal/hendler/formHandler.js"></script>
+    <script src="./javascript/validation/validation.js"></script>
+</body>
+
+</html>
