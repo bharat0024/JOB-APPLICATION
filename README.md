@@ -9,12 +9,13 @@ Abstract:JOB APPLICATION
 
 ## Install & Dependence
 
--cors: "^2.8.5",
--dotenv: "^16.4.5",
--express: "^4.18.3",
--mysql: "^2.18.1",
--nodemon: "^3.1.0"
-
+```
+- cors: "^2.8.5",
+- dotenv: "^16.4.5",
+- express: "^4.18.3",
+- mysql: "^2.18.1",
+- nodemon: "^3.1.0"
+```
 ## Use
 
 - to handle user job application
